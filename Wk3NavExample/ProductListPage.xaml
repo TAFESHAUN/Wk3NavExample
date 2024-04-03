@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wk3NavExample.ProductListPage"
+             Title="ProductList">
+    <StackLayout>
+        <ListView x:Name="ProductListView"
+                  ItemsSource="{Binding Products}"
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Add New Product" FontAttributes="Bold" />
+        <Entry x:Name="IdEntry" Placeholder="Id" />
+        <Entry x:Name="NameEntry" Placeholder="Name" />
+        <Entry x:Name="PriceEntry" Placeholder="Price" />
+        <Entry x:Name="CalCodeEntry" Placeholder="CalCode" />
+        <Button Text="Add Product" Clicked="OnAddProductClicked" />
+    </StackLayout>
+</ContentPage>
